@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>There Is No Pause Button - 2013 Archive</title>
+    <style>
+        body {
+            background-color: #0b0c10;
+            color: #66fcf1;
+            font-family: "Courier New", Courier, monospace;
+            margin: 0;
+            padding: 20px;
+            background-image: radial-gradient(#1f2833 1px, transparent 0);
+            background-size: 20px 20px;
+        }
+
+        .container {
+            max-width: 680px;
+            margin: 30px auto;
+            border: 2px solid #66fcf1;
+            padding: 25px;
+            background: #000000;
+            box-shadow: 0 0 20px rgba(102, 252, 241, 0.2);
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 26px;
+            color: #45a29e;
+            text-shadow: 2px 2px #c5c6c7;
+            letter-spacing: 2px;
+            margin-bottom: 5px;
+        }
+
+        .subtitle {
+            font-size: 11px;
+            color: #888;
+            margin-bottom: 25px;
+        }
+
+        .warning-box {
+            border: 1px dashed #ff0055;
+            color: #ff4d4d;
+            background: #1a0008;
+            padding: 10px;
+            font-size: 12px;
+            margin-bottom: 25px;
+            animation: flicker 4s infinite;
+        }
+
+        @keyframes flicker {
+            0%, 100% { opacity: 0.9; }
+            50% { opacity: 1; }
+            52% { opacity: 0.5; }
+            54% { opacity: 1; }
+        }
+
+        /* Μενού Κουμπιών */
+        .nav-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+
+        .menu-btn {
+            background: #1f2833;
+            color: #66fcf1;
+            border: 1px solid #66fcf1;
+            padding: 8px 16px;
+            font-family: inherit;
+            font-size: 13px;
+            cursor: pointer;
+            box-shadow: 3px 3px #000;
+            transition: all 0.2s;
+        }
+
+        .menu-btn:hover, .menu-btn.active {
+            background: #66fcf1;
+            color: #000;
+            box-shadow: 3px 3px #ff0055;
+        }
+
+        /* Περιοχή Πληροφοριών */
+        .info-panel {
+            display: none;
+            border: 1px solid #45a29e;
+            background: #0b0c10;
+            padding: 15px;
+            text-align: left;
+            font-size: 13px;
+            line-height: 1.6;
+            color: #c5c6c7;
+            margin-bottom: 25px;
+        }
+
+        .info-panel.active {
+            display: block;
+        }
+
+        .info-panel h3 {
+            margin-top: 0;
+            color: #66fcf1;
+            border-bottom: 1px solid #45a29e;
+            padding-bottom: 5px;
+        }
+
+        /* Download Button */
+        .download-btn {
+            display: inline-block;
+            background: #ff0055;
+            color: #fff;
+            padding: 14px 28px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 15px;
+            border: 2px solid #fff;
+            box-shadow: 4px 4px #66fcf1;
+            margin-top: 10px;
+        }
+
+        .download-btn:hover {
+            background: #66fcf1;
+            color: #000;
+            box-shadow: 4px 4px #ff0055;
+        }
+
+        .footer-note {
+            margin-top: 35px;
+            font-size: 10px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>THERE IS NO PAUSE BUTTON!</h1>
+        <div class="subtitle">[ Scott Cawthon Archive - Android v1.0 / May 16, 2013 ]</div>
+
+        <div class="warning-box">
+            SYSTEM ALERT: Original 2013 build restored. Mechanics remain untouched.
+        </div>
+
+        <!-- Μενού Κουμπιών -->
+        <div class="nav-buttons">
+            <button class="menu-btn active" onclick="showTab('about')">ABOUT GAME</button>
+            <button class="menu-btn" onclick="showTab('controls')">CONTROLS</button>
+            <button class="menu-btn" onclick="showTab('dev')">DEVELOPER</button>
+            <button class="menu-btn" onclick="showTab('help')">HELP / FAQ</button>
+        </div>
+
+        <!-- Πληροφορίες: About -->
+        <div id="about" class="info-panel active">
+            <h3>> GAME INFO</h3>
+            <p>Το <b>There Is No Pause Button!</b> κυκλοφόρησε στις 16 Μαΐου 2013 και ήταν το πρώτο επίσημο παιχνίδι του Scott Cawthon που μεταφέρθηκε στο Android (Google Play Store).</p>
+            <p>Πρόκειται για ένα εξαιρετικά δύσκολο 2D auto-runner arcade platformer. Ο χαρακτήρας σου τρέχει αυτόματα με τρελή ταχύτητα και η μόνη σου επιλογή είναι το timing στα άλματα.</p>
+        </div>
+
+        <!-- Πληροφορίες: Controls -->
+        <div id="controls" class="info-panel">
+            <h3>> CONTROLS & MECHANICS</h3>
+            <p>• <b>Tap Screen:</b> Άλμα / Jump.</p>
+            <p>• <b>Hold Screen:</b> Ψηλότερο άλμα.</p>
+            <p>• <b>PAUSE:</b> [ERROR] ΔΕΝ ΥΠΑΡΧΕΙ ΚΟΥΜΠΙ ΠΑΥΣΗΣ. Αν σταματήσεις να προσέχεις, πεθαίνεις.</p>
+            <p>• <b>Στόχος:</b> Να επιβιώσεις από τις παγίδες, τα πριόνια και τα κενά χωρίς ούτε ένα δευτερόλεπτο ξεκούρασης.</p>
+        </div>
+
+        <!-- Πληροφορίες: Developer -->
+        <div id="dev" class="info-panel">
+            <h3>> DEVELOPER NOTES</h3>
+            <p>• <b>Δημιουργός:</b> Scott Cawthon (προτού δημιουργήσει το παγκόσμιο φαινόμενο <i>Five Nights at Freddy's</i> το 2014).</p>
+            <p>• <b>Engine:</b> Clickteam Fusion / Multimedia Fusion 2.</p>
+            <p>• <b>Status:</b> Αφαιρέθηκε από το Google Play Store πριν χρόνια. Αυτή η έκδοση είναι το αυθεντικό v1.0 APK preservation archive.</p>
+        </div>
+
+        <!-- Πληροφορίες: Help -->
+        <div id="help" class="info-panel">
+            <h3>> HELP & INSTALLATION</h3>
+            <p><b>Πώς να το εγκαταστήσεις στο Android:</b></p>
+            <ol style="padding-left: 20px;">
+                <li>Κατέβασε το APK από το κουμπί παρακάτω.</li>
+                <li>Ενεργοποίησε την επιλογή "Εγκατάσταση από άγνωστες πηγές" (Unknown Sources) στις ρυθμίσεις του κινητού σου.</li>
+                <li>Άνοιξε το αρχείο APK και πάτα Εγκατάσταση.</li>
+            </ol>
+            <p><i>Σημείωση: Επειδή είναι εφαρμογή του 2013, ενδέχεται σε πολύ καινούργιες εκδόσεις Android (π.χ. Android 13/14) να ζητήσει επιβεβαίωση συμβατότητας.</i></p>
+        </div>
+
+        <!-- Download Link -->
+        <a href="https://www.mediafire.com/file/hc0wd2e7mmzseq9/There_Is_No_Pause_Button-1.0.apk/file" class="download-btn" target="_blank">
+            DOWNLOAD APK (v1.0)
+        </a>
+
+        <div class="footer-note">
+            Archived on Neocities • 2013 Nostalgia Project <br>
+            "No pause. No mercy."
+        </div>
+    </div>
+
+    <script>
+        function showTab(tabId) {
+            // Κρύψε όλα τα panels
+            const panels = document.querySelectorAll('.info-panel');
+            panels.forEach(panel => panel.classList.remove('active'));
+
+            // Αφαίρεση active class από όλα τα κουμπιά
+            const buttons = document.querySelectorAll('.menu-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+
+            // Εμφάνιση του επιλεγμένου panel & ενεργοποίηση κουμπιού
+            document.getElementById(tabId).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+    </script>
+
+</body>
+</html>
