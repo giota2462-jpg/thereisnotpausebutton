@@ -3,215 +3,238 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>There Is No Pause Button - 2013 Archive</title>
+    <title>There Is No Pause Button! - Official Android Release (2013)</title>
     <style>
+        /* 2013 Classic Web Style */
         body {
-            background-color: #0b0c10;
-            color: #66fcf1;
-            font-family: "Courier New", Courier, monospace;
+            background: #2b3e50 url('https://www.transparenttextures.com/patterns/dark-denim-3.png');
+            color: #333333;
+            font-family: Arial, Helvetica, sans-serif;
             margin: 0;
-            padding: 20px;
-            background-image: radial-gradient(#1f2833 1px, transparent 0);
-            background-size: 20px 20px;
+            padding: 0;
         }
 
-        .container {
-            max-width: 680px;
+        /* Top Bar 2013 Style */
+        .top-nav {
+            background: linear-gradient(to bottom, #4c66a4 0%, #3b5998 100%);
+            height: 40px;
+            border-bottom: 2px solid #29447e;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+            color: white;
+            line-height: 40px;
+            padding: 0 20px;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .main-wrapper {
+            width: 800px;
             margin: 30px auto;
-            border: 2px solid #66fcf1;
+            background: #ffffff;
+            border: 1px solid #cccccc;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+            overflow: hidden;
+        }
+
+        /* Header Banner */
+        .header {
+            background: linear-gradient(to bottom, #e4e4e4 0%, #d1d1d1 100%);
             padding: 25px;
-            background: #000000;
-            box-shadow: 0 0 20px rgba(102, 252, 241, 0.2);
+            border-bottom: 1px solid #bbbbbb;
             text-align: center;
         }
 
-        h1 {
-            font-size: 26px;
-            color: #45a29e;
-            text-shadow: 2px 2px #c5c6c7;
-            letter-spacing: 2px;
-            margin-bottom: 5px;
+        .header h1 {
+            margin: 0;
+            font-size: 32px;
+            color: #222222;
+            text-shadow: 1px 1px 0px #ffffff;
+            font-family: 'Arial Black', Gadget, sans-serif;
         }
 
-        .subtitle {
-            font-size: 11px;
-            color: #888;
-            margin-bottom: 25px;
-        }
-
-        .warning-box {
-            border: 1px dashed #ff0055;
-            color: #ff4d4d;
-            background: #1a0008;
-            padding: 10px;
-            font-size: 12px;
-            margin-bottom: 25px;
-            animation: flicker 4s infinite;
-        }
-
-        @keyframes flicker {
-            0%, 100% { opacity: 0.9; }
-            50% { opacity: 1; }
-            52% { opacity: 0.5; }
-            54% { opacity: 1; }
-        }
-
-        /* Μενού Κουμπιών */
-        .nav-buttons {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-            margin-bottom: 25px;
-        }
-
-        .menu-btn {
-            background: #1f2833;
-            color: #66fcf1;
-            border: 1px solid #66fcf1;
-            padding: 8px 16px;
-            font-family: inherit;
+        .header p {
+            margin: 5px 0 0 0;
+            color: #666666;
             font-size: 13px;
+        }
+
+        /* 2013 Shiny Button Bar */
+        .navbar {
+            background: linear-gradient(to bottom, #4c4c4c 0%, #131313 100%);
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        .nav-btn {
+            background: linear-gradient(to bottom, #ffffff 0%, #e5e5e5 100%);
+            border: 1px solid #b2b2b2;
+            border-radius: 4px;
+            color: #333333;
+            padding: 8px 18px;
+            font-size: 13px;
+            font-weight: bold;
             cursor: pointer;
-            box-shadow: 3px 3px #000;
-            transition: all 0.2s;
+            margin: 0 4px;
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.8), 0 1px 2px rgba(0,0,0,0.2);
+            text-shadow: 0 1px 0 #fff;
         }
 
-        .menu-btn:hover, .menu-btn.active {
-            background: #66fcf1;
-            color: #000;
-            box-shadow: 3px 3px #ff0055;
+        .nav-btn:hover {
+            background: linear-gradient(to bottom, #f2f2f2 0%, #d8d8d8 100%);
         }
 
-        /* Περιοχή Πληροφοριών */
-        .info-panel {
+        .nav-btn.active {
+            background: linear-gradient(to bottom, #0088cc 0%, #005580 100%);
+            color: white;
+            border-color: #004466;
+            text-shadow: 0 -1px 0 rgba(0,0,0,0.4);
+        }
+
+        /* Content Area */
+        .content {
+            padding: 30px;
+            min-height: 220px;
+        }
+
+        .tab-panel {
             display: none;
-            border: 1px solid #45a29e;
-            background: #0b0c10;
-            padding: 15px;
-            text-align: left;
-            font-size: 13px;
+            font-size: 14px;
             line-height: 1.6;
-            color: #c5c6c7;
-            margin-bottom: 25px;
         }
 
-        .info-panel.active {
+        .tab-panel.active {
             display: block;
         }
 
-        .info-panel h3 {
+        .tab-panel h2 {
+            font-size: 20px;
+            color: #0088cc;
             margin-top: 0;
-            color: #66fcf1;
-            border-bottom: 1px solid #45a29e;
-            padding-bottom: 5px;
+            border-bottom: 2px solid #eeeeee;
+            padding-bottom: 8px;
         }
 
-        /* Download Button */
-        .download-btn {
+        /* 2013 Download Box */
+        .download-box {
+            background: #f9f9f9;
+            border: 1px solid #e3e3e3;
+            border-radius: 6px;
+            padding: 20px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .btn-download {
             display: inline-block;
-            background: #ff0055;
-            color: #fff;
-            padding: 14px 28px;
-            text-decoration: none;
+            background: linear-gradient(to bottom, #70ba13 0%, #508a0d 100%);
+            border: 1px solid #417009;
+            border-radius: 6px;
+            color: #ffffff !important;
+            font-size: 18px;
             font-weight: bold;
-            font-size: 15px;
-            border: 2px solid #fff;
-            box-shadow: 4px 4px #66fcf1;
-            margin-top: 10px;
+            padding: 14px 35px;
+            text-decoration: none;
+            text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.4), 0 3px 6px rgba(0,0,0,0.2);
         }
 
-        .download-btn:hover {
-            background: #66fcf1;
-            color: #000;
-            box-shadow: 4px 4px #ff0055;
+        .btn-download:hover {
+            background: linear-gradient(to bottom, #7bc917 0%, #5a9b0e 100%);
         }
 
-        .footer-note {
-            margin-top: 35px;
-            font-size: 10px;
-            color: #555;
+        /* Footer */
+        .footer {
+            background: #f5f5f5;
+            border-top: 1px solid #e5e5e5;
+            padding: 15px;
+            text-align: center;
+            font-size: 12px;
+            color: #777777;
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <h1>THERE IS NO PAUSE BUTTON!</h1>
-        <div class="subtitle">[ Scott Cawthon Archive - Android v1.0 / May 16, 2013 ]</div>
+    <div class="top-nav">
+        Android Indie Games Archive (2013)
+    </div>
 
-        <div class="warning-box">
-            SYSTEM ALERT: Original 2013 build restored. Mechanics remain untouched.
+    <div class="main-wrapper">
+        <div class="header">
+            <h1>There Is No Pause Button!</h1>
+            <p>Created by Scott Cawthon • Released: May 16, 2013</p>
         </div>
 
-        <!-- Μενού Κουμπιών -->
-        <div class="nav-buttons">
-            <button class="menu-btn active" onclick="showTab('about')">ABOUT GAME</button>
-            <button class="menu-btn" onclick="showTab('controls')">CONTROLS</button>
-            <button class="menu-btn" onclick="showTab('dev')">DEVELOPER</button>
-            <button class="menu-btn" onclick="showTab('help')">HELP / FAQ</button>
+        <div class="navbar">
+            <button class="nav-btn active" onclick="openTab(event, 'about')">About</button>
+            <button class="nav-btn" onclick="openTab(event, 'gameplay')">Gameplay & Controls</button>
+            <button class="nav-btn" onclick="openTab(event, 'developer')">Developer Info</button>
+            <button class="nav-btn" onclick="openTab(event, 'install')">Installation Guide</button>
         </div>
 
-        <!-- Πληροφορίες: About -->
-        <div id="about" class="info-panel active">
-            <h3>> GAME INFO</h3>
-            <p>Το <b>There Is No Pause Button!</b> κυκλοφόρησε στις 16 Μαΐου 2013 και ήταν το πρώτο επίσημο παιχνίδι του Scott Cawthon που μεταφέρθηκε στο Android (Google Play Store).</p>
-            <p>Πρόκειται για ένα εξαιρετικά δύσκολο 2D auto-runner arcade platformer. Ο χαρακτήρας σου τρέχει αυτόματα με τρελή ταχύτητα και η μόνη σου επιλογή είναι το timing στα άλματα.</p>
+        <div class="content">
+            <!-- About Tab -->
+            <div id="about" class="tab-panel active">
+                <h2>About the Game</h2>
+                <p><b>There Is No Pause Button!</b> is an action-packed 2D auto-runner developed by Scott Cawthon for Android devices in May 2013.</p>
+                <p>Unlike traditional platformers, your character never stops moving. You must navigate through increasingly difficult obstacles, spikes, and traps with pixel-perfect precision.</p>
+            </div>
+
+            <!-- Gameplay Tab -->
+            <div id="gameplay" class="tab-panel">
+                <h2>Controls & Mechanics</h2>
+                <ul>
+                    <li><b>Tap Screen:</b> Jump</li>
+                    <li><b>Hold Screen:</b> Higher Jump</li>
+                    <li><b>Pause Menu:</b> <i>Non-existent!</i> As the title suggests, there is no way to pause the game once a level starts.</li>
+                </ul>
+            </div>
+
+            <!-- Developer Tab -->
+            <div id="developer" class="tab-panel">
+                <h2>Developer Info</h2>
+                <p>This game was created by <b>Scott Cawthon</b> using <i>Clickteam Fusion</i>, a year before he released the original <i>Five Nights at Freddy's</i> (2014).</p>
+                <p>This page serves as a digital archive for the original v1.0 APK build.</p>
+            </div>
+
+            <!-- Install Tab -->
+            <div id="install" class="tab-panel">
+                <h2>How to Install</h2>
+                <ol>
+                    <li>Click the green download button below to get the APK file from MediaFire.</li>
+                    <li>Enable <b>"Unknown Sources"</b> in your Android device's Security Settings.</li>
+                    <li>Open the downloaded <b>There_Is_No_Pause_Button-1.0.apk</b> file and tap Install.</li>
+                </ol>
+            </div>
+
+            <!-- Download Section -->
+            <div class="download-box">
+                <a href="https://www.mediafire.com/file/hc0wd2e7mmzseq9/There_Is_No_Pause_Button-1.0.apk/file" class="btn-download" target="_blank">
+                    Download APK v1.0 (MediaFire)
+                </a>
+                <p style="font-size: 11px; color: #888; margin-top: 10px; margin-bottom: 0;">File size: ~4.5 MB | Android 2.3 or higher</p>
+            </div>
         </div>
 
-        <!-- Πληροφορίες: Controls -->
-        <div id="controls" class="info-panel">
-            <h3>> CONTROLS & MECHANICS</h3>
-            <p>• <b>Tap Screen:</b> Άλμα / Jump.</p>
-            <p>• <b>Hold Screen:</b> Ψηλότερο άλμα.</p>
-            <p>• <b>PAUSE:</b> [ERROR] ΔΕΝ ΥΠΑΡΧΕΙ ΚΟΥΜΠΙ ΠΑΥΣΗΣ. Αν σταματήσεις να προσέχεις, πεθαίνεις.</p>
-            <p>• <b>Στόχος:</b> Να επιβιώσεις από τις παγίδες, τα πριόνια και τα κενά χωρίς ούτε ένα δευτερόλεπτο ξεκούρασης.</p>
-        </div>
-
-        <!-- Πληροφορίες: Developer -->
-        <div id="dev" class="info-panel">
-            <h3>> DEVELOPER NOTES</h3>
-            <p>• <b>Δημιουργός:</b> Scott Cawthon (προτού δημιουργήσει το παγκόσμιο φαινόμενο <i>Five Nights at Freddy's</i> το 2014).</p>
-            <p>• <b>Engine:</b> Clickteam Fusion / Multimedia Fusion 2.</p>
-            <p>• <b>Status:</b> Αφαιρέθηκε από το Google Play Store πριν χρόνια. Αυτή η έκδοση είναι το αυθεντικό v1.0 APK preservation archive.</p>
-        </div>
-
-        <!-- Πληροφορίες: Help -->
-        <div id="help" class="info-panel">
-            <h3>> HELP & INSTALLATION</h3>
-            <p><b>Πώς να το εγκαταστήσεις στο Android:</b></p>
-            <ol style="padding-left: 20px;">
-                <li>Κατέβασε το APK από το κουμπί παρακάτω.</li>
-                <li>Ενεργοποίησε την επιλογή "Εγκατάσταση από άγνωστες πηγές" (Unknown Sources) στις ρυθμίσεις του κινητού σου.</li>
-                <li>Άνοιξε το αρχείο APK και πάτα Εγκατάσταση.</li>
-            </ol>
-            <p><i>Σημείωση: Επειδή είναι εφαρμογή του 2013, ενδέχεται σε πολύ καινούργιες εκδόσεις Android (π.χ. Android 13/14) να ζητήσει επιβεβαίωση συμβατότητας.</i></p>
-        </div>
-
-        <!-- Download Link -->
-        <a href="https://www.mediafire.com/file/hc0wd2e7mmzseq9/There_Is_No_Pause_Button-1.0.apk/file" class="download-btn" target="_blank">
-            DOWNLOAD APK (v1.0)
-        </a>
-
-        <div class="footer-note">
-            Archived on Neocities • 2013 Nostalgia Project <br>
-            "No pause. No mercy."
+        <div class="footer">
+            &copy; 2013 Scott Cawthon Archive • Hosted on GitHub Pages
         </div>
     </div>
 
     <script>
-        function showTab(tabId) {
-            // Κρύψε όλα τα panels
-            const panels = document.querySelectorAll('.info-panel');
-            panels.forEach(panel => panel.classList.remove('active'));
-
-            // Αφαίρεση active class από όλα τα κουμπιά
-            const buttons = document.querySelectorAll('.menu-btn');
-            buttons.forEach(btn => btn.classList.remove('active'));
-
-            // Εμφάνιση του επιλεγμένου panel & ενεργοποίηση κουμπιού
-            document.getElementById(tabId).classList.add('active');
-            event.currentTarget.classList.add('active');
+        function openTab(evt, tabName) {
+            var i, tabpanel, navbtn;
+            tabpanel = document.getElementsByClassName("tab-panel");
+            for (i = 0; i < tabpanel.length; i++) {
+                tabpanel[i].classList.remove("active");
+            }
+            navbtn = document.getElementsByClassName("nav-btn");
+            for (i = 0; i < navbtn.length; i++) {
+                navbtn[i].classList.remove("active");
+            }
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
         }
     </script>
 
