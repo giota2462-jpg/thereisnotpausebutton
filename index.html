@@ -1,141 +1,181 @@
-<!DOCTYPE html>
-<html lang="el">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>There Is No Pause Button! - Official Android Release (2013)</title>
-    <style>
-        body {
-            background-color: #ffffff;
-            color: #222222;
-            font-family: Arial, Helvetica, sans-serif;
-            margin: 0;
+
+        .navbar {
+            background: linear-gradient(to bottom, #4c4c4c 0%, #131313 100%);
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        .nav-btn {
+            background: linear-gradient(to bottom, #ffffff 0%, #e5e5e5 100%);
+            border: 1px solid #b2b2b2;
+            border-radius: 4px;
+            color: #333333;
+            padding: 8px 18px;
+            font-size: 13px;
+            font-weight: bold;
+            cursor: pointer;
+            margin: 0 4px;
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.8), 0 1px 2px rgba(0,0,0,0.2);
+            text-shadow: 0 1px 0 #fff;
+        }
+
+        .nav-btn:hover {
+            background: linear-gradient(to bottom, #f2f2f2 0%, #d8d8d8 100%);
+        }
+
+        .nav-btn.active {
+            background: linear-gradient(to bottom, #0088cc 0%, #005580 100%);
+            color: white;
+            border-color: #004466;
+            text-shadow: 0 -1px 0 rgba(0,0,0,0.4);
+        }
+
+        /* Content Area */
+        .content {
             padding: 30px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
+            min-height: 220px;
+        }
+
+        .tab-panel {
+            display: none;
+            font-size: 14px;
             line-height: 1.6;
         }
 
-        .header-img {
-            max-width: 200px;
-            height: auto;
-            display: block;
-            margin: 0 auto 15px auto;
-        }
-
-        h1 {
-            font-size: 24px;
-            color: #111;
-            text-align: center;
-            margin-bottom: 5px;
-        }
-
-        .subtitle {
-            text-align: center;
-            font-size: 13px;
-            color: #666;
-            margin-bottom: 30px;
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 15px;
-        }
-
-        h2 {
-            font-size: 18px;
-            color: #0066cc;
-            margin-top: 30px;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 5px;
-        }
-
-        .game-screenshot {
-            max-width: 100%;
-            height: auto;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            margin: 15px 0;
+        .tab-panel.active {
             display: block;
         }
 
+        .tab-panel h2 {
+            font-size: 20px;
+            color: #0088cc;
+            margin-top: 0;
+            border-bottom: 2px solid #eeeeee;
+            padding-bottom: 8px;
+        }
+
+        /* 2013 Download Box */
         .download-box {
             background: #f9f9f9;
-            border: 1px solid #ddd;
+            border: 1px solid #e3e3e3;
+            border-radius: 6px;
             padding: 20px;
             text-align: center;
-            margin-top: 30px;
-            border-radius: 5px;
+            margin-top: 20px;
         }
 
         .btn-download {
             display: inline-block;
-            background: #51a351;
-            color: #ffffff;
+            background: linear-gradient(to bottom, #70ba13 0%, #508a0d 100%);
+            border: 1px solid #417009;
+            border-radius: 6px;
+            color: #ffffff !important;
+            font-size: 18px;
             font-weight: bold;
-            padding: 12px 25px;
+            padding: 14px 35px;
             text-decoration: none;
-            border-radius: 4px;
-            font-size: 16px;
+            text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.4), 0 3px 6px rgba(0,0,0,0.2);
         }
 
         .btn-download:hover {
-            background: #408140;
+            background: linear-gradient(to bottom, #7bc917 0%, #5a9b0e 100%);
         }
 
+        /* Footer */
         .footer {
-            margin-top: 40px;
+            background: #f5f5f5;
+            border-top: 1px solid #e5e5e5;
+            padding: 15px;
             text-align: center;
-            font-size: 11px;
-            color: #888;
-            border-top: 1px solid #eee;
-            padding-top: 15px;
+            font-size: 12px;
+            color: #777777;
         }
     </style>
 </head>
 <body>
 
-    <!-- Η δεύτερη εικόνα σου ως λογότυπο στην κορυφή -->
-    <img src="IMG_555f07ba-9d31-4ea3-820b-b1d7d1261aa2.jpg" alt="There Is No Pause Button Logo" class="header-img">
-    
-    <h1>There Is No Pause Button!</h1>
-    <div class="subtitle">Created by Scott Cawthon • Released: May 16, 2013</div>
-
-    <h2>About the Game</h2>
-    <p><b>There Is No Pause Button!</b> is an action-packed 2D auto-runner developed by Scott Cawthon for Android devices in May 2013[span_0](start_span)[span_0](end_span). Unlike traditional platformers, your character never stops moving. You must navigate through increasingly difficult obstacles, spikes, and traps with pixel-perfect precision[span_1](start_span)[span_1](end_span).</p>
-
-    <h2>Controls & Mechanics</h2>
-    <ul>
-        <li><b>Tap Screen:</b> Jump[span_2](start_span)[span_2](end_span)</li>
-        <li><b>Hold Screen:</b> Higher Jump[span_3](start_span)[span_3](end_span)</li>
-        <li><b>Pause Menu:</b> <i>Non-existent!</i> As the title suggests, there is no way to pause the game once a level starts[span_4](start_span)[span_4](end_span).</li>
-    </ul>
-
-    <h2>Gameplay & Preview</h2>
-    <p>Here is an original screenshot from the game:</p>
-    <!-- Η πρώτη εικόνα σου με τον δεινόσαυρο μέσα στο περιεχόμενο -->
-    <img src="IMG_87006806-a5be-42d8-913d-53c73e6c5ab9.jpg" alt="There Is No Pause Button Gameplay" class="game-screenshot">
-
-    <h2>Developer Info</h2>
-    <p>This game was created by <b>Scott Cawthon</b> using <i>Clickteam Fusion</i>, a year before he released the original <i>Five Nights at Freddy's</i> (2014)[span_5](start_span)[span_5](end_span).</p>
-    <p>This page serves as a digital archive for the original v1.0 APK build[span_6](start_span)[span_6](end_span).</p>
-
-    <h2>How to Install</h2>
-    <ol>
-        <li>Click the green download button below to get the APK file from MediaFire[span_7](start_span)[span_7](end_span).</li>
-        <li>Enable <b>"Unknown Sources"</b> in your Android device's Security Settings[span_8](start_span)[span_8](end_span).</li>
-        <li>Open the downloaded <b>There_Is_No_Pause_Button-1.0.apk</b> file and tap Install[span_9](start_span)[span_9](end_span).</li>
-    </ol>
-
-    <!-- Download Section -->
-    <div class="download-box">
-        <a href="https://www.mediafire.com/file/hc0wd2e7mmzseq9/There_Is_No_Pause_Button-1.0.apk/file" class="btn-download" target="_blank">
-            Download APK v1.0 (MediaFire)
-        </a>
-        <p style="font-size: 11px; color: #777; margin-top: 10px; margin-bottom: 0;">File size: ~4.5 MB | Android 2.3 or higher[span_10](start_span)[span_10](end_span)</p>
+    <div class="top-nav">
+        Android Indie Games Archive (2013)
     </div>
 
-    <div class="footer">
-        &copy; 2013 Scott Cawthon Archive • Hosted on GitHub Pages[span_11](start_span)[span_11](end_span)
+    <div class="main-wrapper">
+        <div class="header">
+            <h1>There Is No Pause Button!</h1>
+            <p>Created by Scott Cawthon • Released: May 16, 2013</p>
+        </div>
+
+        <div class="navbar">
+            <button class="nav-btn active" onclick="openTab(event, 'about')">About</button>
+            <button class="nav-btn" onclick="openTab(event, 'gameplay')">Gameplay & Controls</button>
+            <button class="nav-btn" onclick="openTab(event, 'developer')">Developer Info</button>
+            <button class="nav-btn" onclick="openTab(event, 'install')">Installation Guide</button>
+        </div>
+
+        <div class="content">
+            <!-- About Tab -->
+            <div id="about" class="tab-panel active">
+                <h2>About the Game</h2>
+                <p><b>There Is No Pause Button!</b> is an action-packed 2D auto-runner developed by Scott Cawthon for Android devices in May 2013.</p>
+                <p>Unlike traditional platformers, your character never stops moving. You must navigate through increasingly difficult obstacles, spikes, and traps with pixel-perfect precision.</p>
+            </div>
+
+            <!-- Gameplay Tab -->
+            <div id="gameplay" class="tab-panel">
+                <h2>Controls & Mechanics</h2>
+                <ul>
+                    <li><b>Tap Screen:</b> Jump</li>
+                    <li><b>Hold Screen:</b> Higher Jump</li>
+                    <li><b>Pause Menu:</b> <i>Non-existent!</i> As the title suggests, there is no way to pause the game once a level starts.</li>
+                </ul>
+            </div>
+
+            <!-- Developer Tab -->
+            <div id="developer" class="tab-panel">
+                <h2>Developer Info</h2>
+                <p>This game was created by <b>Scott Cawthon</b> using <i>Clickteam Fusion</i>, a year before he released the original <i>Five Nights at Freddy's</i> (2014).</p>
+                <p>This page serves as a digital archive for the original v1.0 APK build.</p>
+            </div>
+
+            <!-- Install Tab -->
+            <div id="install" class="tab-panel">
+                <h2>How to Install</h2>
+                <ol>
+                    <li>Click the green download button below to get the APK file from MediaFire.</li>
+                    <li>Enable <b>"Unknown Sources"</b> in your Android device's Security Settings.</li>
+                    <li>Open the downloaded <b>There_Is_No_Pause_Button-1.0.apk</b> file and tap Install.</li>
+                </ol>
+            </div>
+
+            <!-- Download Section -->
+            <div class="download-box">
+                <a href="https://www.mediafire.com/file/hc0wd2e7mmzseq9/There_Is_No_Pause_Button-1.0.apk/file" class="btn-download" target="_blank">
+                    Download APK v1.0 (MediaFire)
+                </a>
+                <p style="font-size: 11px; color: #888; margin-top: 10px; margin-bottom: 0;">File size: ~4.5 MB | Android 2.3 or higher</p>
+            </div>
+        </div>
+
+        <div class="footer">
+            &copy; 2013 Scott Cawthon Archive • Hosted on GitHub Pages
+        </div>
     </div>
+
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabpanel, navbtn;
+            tabpanel = document.getElementsByClassName("tab-panel");
+            for (i = 0; i < tabpanel.length; i++) {
+                tabpanel[i].classList.remove("active");
+            }
+            navbtn = document.getElementsByClassName("nav-btn");
+            for (i = 0; i < navbtn.length; i++) {
+                navbtn[i].classList.remove("active");
+            }
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+    </script>
 
 </body>
 </html>
